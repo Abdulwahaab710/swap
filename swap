@@ -1,0 +1,12 @@
+#! /bin/bash
+
+function swap_file_names {
+    first_file=$1
+    second_file=$2
+    tmp_name="tmp:$first_file+$second_file"
+    mv $first_file $tmp_name
+    mv $second_file $first_file
+    mv $tmp_name $second_file
+}
+
+swap_file_names $1 $2
